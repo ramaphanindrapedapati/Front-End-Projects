@@ -1,0 +1,89 @@
+/* Full screen animated background */
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+}
+
+/* Background animation */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Glass Card */
+.login-card {
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.15);
+  padding: 50px;
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 350px;
+  animation: fadeIn 1.5s ease;
+}
+
+/* Title animation */
+.login-title {
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: white;
+  animation: slideDown 1s ease;
+}
+
+.login-subtitle {
+  margin-bottom: 30px;
+  color: white;
+  opacity: 0.8;
+}
+
+/* Buttons */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.4s;
+  color: white;
+}
+
+/* Customer Button */
+.customer-btn {
+  background: linear-gradient(to right, #36d1dc, #5b86e5);
+}
+
+.customer-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Manager Button */
+.manager-btn {
+  background: linear-gradient(to right, #ff512f, #dd2476);
+}
+
+.manager-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Animations */
+@keyframes slideDown {
+  from { transform: translateY(-40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}

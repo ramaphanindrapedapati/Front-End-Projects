@@ -1,0 +1,144 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Background Animation */
+.dashboard {
+  min-height: 100vh;
+  padding: 40px;
+  background: linear-gradient(-45deg, #1e3c72, #2a5298, #6dd5ed, #2193b0);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+  color: white;
+}
+
+/* Gradient animation */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 32px;
+  animation: slideDown 1s ease;
+}
+
+/* Logout Button */
+.logout-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  background: #ff4d4d;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background: #ff1a1a;
+  transform: scale(1.1);
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.card {
+  flex: 1;
+  padding: 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  transition: 0.4s;
+  animation: fadeUp 1.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+}
+
+.card h2 {
+  margin-bottom: 15px;
+}
+
+.card p {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* Tables */
+.tables {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.table-container {
+  flex: 1;
+  min-width: 400px;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.15);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  animation: fadeUp 1.5s ease;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th {
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+tr:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Status Colors */
+.active {
+  color: #00ff88;
+  font-weight: bold;
+}
+
+.inactive {
+  color: #ff4d4d;
+  font-weight: bold;
+}
+
+/* Animations */
+@keyframes slideDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
