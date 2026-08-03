@@ -4,12 +4,18 @@ import "./CustomerCss/payment.css";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import PageTransition from "../../components/PageTransition";
-
+import { useNavigate } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 
 function Payment() {
+    
+    const {
+    cartItems,
+    totalPrice,
+    clearCart
+} = useCart();
 
-    const { cartItems, totalPrice } = useCart();
+const navigate = useNavigate();
 
     const [showQR, setShowQR] = useState(false);
 
@@ -105,11 +111,34 @@ function Payment() {
 
                                     </div>
 
-                                    <button className="confirm-btn">
+                  <button
+    className="confirm-btn"
+onClick={() => {
 
-                                        I've Paid
+    const orders = JSON.parse(localStorage.getItem("orders")) || [];
 
-                                    </button>
+    const newOrder = {
+        id: Date.now(),
+        date: new Date().toLocaleString(),
+        status: "Confirmed",
+        total: total.toFixed(2),
+        items: cartItems
+    };
+
+    orders.unshift(newOrder);
+
+    localStorage.setItem("orders", JSON.stringify(orders));
+
+    clearCart();
+
+    navigate("/order-success");
+
+}}
+>
+
+    I've Paid
+
+</button>
 
                                 </div>
 

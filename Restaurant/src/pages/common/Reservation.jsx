@@ -10,7 +10,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TimePicker from "../../components/TimePicker/TimePicker";
 import PageTransition from "../../components/PageTransition";
-
+import { toast } from "react-toastify";
 const Reservation = () => {
     const navigate = useNavigate();
 const handleReservation = (e) => {
@@ -21,9 +21,13 @@ const handleReservation = (e) => {
 
     if (isLoggedIn !== "true") {
 
-        alert("⚠ Please login to reserve a table.");
+        toast.warning("Please login first!");
 
-        navigate("/login");
+setTimeout(() => {
+
+    navigate("/login");
+
+}, 1200);
 
         return;
     }

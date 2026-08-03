@@ -135,10 +135,9 @@ export const CartProvider = ({ children }) => {
     // Clear Cart
 
     const clearCart = () => {
-
-        setCartItems([]);
-
-    };
+    setCartItems([]);
+    localStorage.removeItem("cart");
+};
 
     // Total Items
 

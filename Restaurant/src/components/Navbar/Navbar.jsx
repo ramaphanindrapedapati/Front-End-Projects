@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaShoppingCart, FaUser, FaRobot } from "react-icons/fa";
 import { useCart } from "../../context/CartContext";
-
+import { toast } from "react-toastify";
 import AIChat from "../AIChat/AIChat";
 
 import "./Navbar.css";
@@ -13,24 +13,26 @@ function Navbar() {
     const navigate = useNavigate();
     const { cartCount } = useCart();
 
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
- 
-    const handleCartClick = () => {
-//const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+const isLoggedIn = localStorage.getItem("isLoggedIn") === "true"; 
+   const handleCartClick = () => {
 
-    if (isLoggedIn === "true") {
+    if (isLoggedIn) {
 
         navigate("/cart");
 
     } else {
 
-        alert("⚠ Please login first.");
+        toast.warning("Please login first!");
 
-        navigate("/login");
+setTimeout(() => {
+
+    navigate("/login");
+
+}, 1200);
 
     }
 
-}
+};
 ;
 
 const handleLogout = () => {
@@ -104,6 +106,16 @@ const handleLogout = () => {
                                     Contact
                                 </Link>
                             </li>
+
+{isLoggedIn && (
+    <li className="nav-item">
+        <Link className="nav-link" to="/orders">
+            My Orders
+        </Link>
+    </li>
+)}
+
+
 
                         </ul>
 

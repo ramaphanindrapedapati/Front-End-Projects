@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
-
+import { toast } from "react-toastify";
 import {
     FaEnvelope,
     FaLock,
@@ -50,8 +50,11 @@ const handleSubmit = (e) => {
 
 
     if (!savedUser) {
+        toast.error("No account found. Please register first ❌");
 
-        alert("No account found. Please register first ❌");
+setTimeout(() => {
+
+}, 1200);
         return;
 
     }
@@ -73,16 +76,25 @@ const handleSubmit = (e) => {
             savedUser.email
         );
 
+toast.success("login Sccessfull");
 
-        alert("Login Successful ✅");
+setTimeout(() => {
 
         navigate("/");
+
+}, 1200);
+
 
     }
 
     else {
+        toast.error("Invalid Email or Password ❌");
 
-        alert("Invalid Email or Password ❌");
+setTimeout(() => {
+
+    navigate("/login");
+
+}, 1200);
 
     }
 

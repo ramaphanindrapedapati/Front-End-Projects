@@ -2,7 +2,7 @@ import "./CommonCss/Register.css";
 
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
+import { toast } from "react-toastify";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 
@@ -62,7 +62,11 @@ const Register = () => {
     e.preventDefault();
 
     if (formData.password !== formData.confirmPassword) {
-        alert("Passwords do not match ❌");
+        toast.warning("Passwords do not match ❌");
+
+setTimeout(() => {
+
+}, 1200);
         return;
     }
 

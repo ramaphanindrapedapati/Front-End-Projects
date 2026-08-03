@@ -1,0 +1,339 @@
+/* ===================================================
+                MY ORDERS PAGE
+=================================================== */
+
+.orders-page{
+
+    padding:120px 7% 80px;
+
+    min-height:100vh;
+
+    background:#f5f2ed;
+
+}
+
+.orders-container{
+
+    max-width:1400px;
+
+    margin:auto;
+
+}
+
+.orders-title{
+
+    font-size:46px;
+
+    font-weight:700;
+
+    color:#d4af37;
+
+    margin-bottom:40px;
+
+}
+
+/* ===================================================
+                EMPTY ORDERS
+=================================================== */
+
+.empty-orders{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:80px 40px;
+
+    text-align:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.empty-orders h2{
+
+    color:#222;
+
+    margin-bottom:15px;
+
+}
+
+.empty-orders p{
+
+    color:#666;
+
+    font-size:18px;
+
+}
+
+/* ===================================================
+                ORDER LIST
+=================================================== */
+
+.orders-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:35px;
+
+}
+
+/* ===================================================
+                ORDER CARD
+=================================================== */
+
+.order-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    border:1px solid rgba(212,175,55,.25);
+
+    transition:.3s;
+
+}
+
+.order-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+
+/* ===================================================
+                HEADER
+=================================================== */
+
+.order-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+    padding-bottom:20px;
+
+    border-bottom:1px solid #eee;
+
+}
+
+.order-header h2{
+
+    font-size:26px;
+
+    color:#222;
+
+    margin-bottom:6px;
+
+}
+
+.order-header p{
+
+    color:#777;
+
+    font-size:15px;
+
+}
+
+.status{
+
+    background:#28a745;
+
+    color:#fff;
+
+    padding:8px 20px;
+
+    border-radius:30px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+/* ===================================================
+                ITEMS
+=================================================== */
+
+.order-items{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.order-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding:15px 0;
+
+    border-bottom:1px solid #ececec;
+
+}
+
+.order-item:last-child{
+
+    border-bottom:none;
+
+}
+
+/* Small Images */
+
+.order-item img{
+
+    width:90px;
+
+    height:90px;
+
+    object-fit:cover;
+
+    border-radius:12px;
+
+    border:1px solid #ddd;
+
+    flex-shrink:0;
+
+}
+
+.item-info{
+
+    flex:1;
+
+}
+
+.item-info h4{
+
+    font-size:20px;
+
+    color:#222;
+
+    margin-bottom:5px;
+
+}
+
+.item-info p{
+
+    color:#777;
+
+    font-size:15px;
+
+}
+
+.order-item h4:last-child{
+
+    color:#d4af37;
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+/* ===================================================
+                FOOTER
+=================================================== */
+
+.order-footer{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    align-items:center;
+
+    margin-top:25px;
+
+    padding-top:20px;
+
+    border-top:1px solid #eee;
+
+}
+
+.order-footer h3{
+
+    color:#d4af37;
+
+    font-size:28px;
+
+    font-weight:700;
+
+}
+
+/* ===================================================
+                MOBILE
+=================================================== */
+
+@media(max-width:768px){
+
+    .orders-page{
+
+        padding:100px 20px;
+
+    }
+
+    .orders-title{
+
+        font-size:34px;
+
+        text-align:center;
+
+    }
+
+    .order-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:15px;
+
+    }
+
+    .order-item{
+
+        flex-wrap:wrap;
+
+    }
+
+    .order-item img{
+
+        width:70px;
+
+        height:70px;
+
+    }
+
+    .order-item h4:last-child{
+
+        width:100%;
+
+        text-align:right;
+
+    }
+
+    .order-footer{
+
+        justify-content:center;
+
+    }
+
+}

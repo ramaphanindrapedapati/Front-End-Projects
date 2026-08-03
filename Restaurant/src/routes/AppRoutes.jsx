@@ -12,6 +12,8 @@ import Cart from "../pages/customer/Cart";
 import NotFound from "../pages/common/NotFound";
 import Payment from "../pages/customer/Payment";
 import FloatingAI from "../components/FloatingAI/FloatingAI";
+import OrderSuccess from "../pages/customer/OrderSuccess";
+import Order from "../pages/customer/Order";
 
 function AppRoutes() {
 
@@ -35,6 +37,12 @@ function AppRoutes() {
                     <Route path="/login" element={<Login />} />
                     <Route path="/cart" element={<Cart />} />
                     <Route path="/payment" element={<Payment />} /> 
+                    <Route path="/order-success" element={<OrderSuccess />} />
+
+<Route
+    path="/orders"
+    element={<Order />}
+/>
                    <Route path="*" element={<NotFound />} />
                    {/* <Route path="/order-success" element={<OrderSuccess />} /> */}
                 </Routes>
